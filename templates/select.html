@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choix de la Classe et du Sujet</title>
+</head>
+<body>
+    <h1>Sélectionner la Classe et le Sujet</h1>
+    <form method="POST">
+        <div>
+            <label for="classe">Choisissez une classe :</label>
+            <select name="classe" id="classe" required>
+                {% for classe in classes %}
+                    <option value="{{ classe.id }}">{{ classe.nom }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="matiere">Choisissez une matière :</label>
+            <select name="matiere" id="matiere" required>
+                {% for matiere in matieres %}
+                    <option value="{{ matiere.id }}">{{ matiere.nom }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <button type="submit">Accéder au formulaire</button>
+        </div>
+    </form>
+    
+    
+</body>
+</html>
